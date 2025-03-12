@@ -70,6 +70,20 @@ const EmojiAuth = () => {
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <div style={{ padding: '20px', textAlign: 'center', border: '1px solid #ccc', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
         <h2>EmojiAuth</h2>
+
+        {/* Progress Bar */}
+        <div style={{ height: '10px', width: '100%', backgroundColor: '#eee', borderRadius: '5px', marginBottom: '15px' }}>
+          <div
+            style={{
+              height: '100%',
+              width: `${(selected.length / 4) * 100}%`,
+              backgroundColor: '#4caf50',
+              borderRadius: '5px',
+              transition: 'width 0.2s ease',
+            }}
+          ></div>
+        </div>
+
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 50px)', gap: '10px', justifyContent: 'center' }}>
           {shuffledEmojis.map((emoji, index) => (
             <button
@@ -109,4 +123,3 @@ const EmojiAuth = () => {
 };
 
 export default EmojiAuth;
-
